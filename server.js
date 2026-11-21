@@ -167,4 +167,9 @@ app.post('/api/cashfree/webhook', async (req, res) => {
 });
 
 const port = Number(process.env.PORT || 8080);
-app.listen(port, () => console.log(`MI membership API listening on ${port} (${production ? 'PRODUCTION' : 'SANDBOX'})`));
+
+app.listen(port, '0.0.0.0', () => {
+  console.log(
+    `MI membership API listening on ${port} (${production ? 'PRODUCTION' : 'SANDBOX'})`
+  );
+});
